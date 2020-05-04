@@ -1,0 +1,234 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #212738;
+    color: white;
+}
+
+input {
+    width: 100px;
+    margin-top: 10px;
+}
+
+button {
+    margin: 20px 0 20px 0;
+}
+
+select {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#top-block {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    margin-bottom: -50px;
+}
+
+#logo {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 150px;
+    width: 150px;
+}
+
+#top-title {
+    position: absolute;
+    left: 250px;
+    top: 150px;
+}
+
+.header-burger {
+    display: none;
+}
+
+#sidebar-currency-select {}
+
+#currencies-list {
+    height: 700px;
+    overflow: scroll;
+    overflow-x: auto;
+}
+
+.currencies-list-item {
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    background: #2E394D;
+    cursor: pointer;
+}
+
+#side-bar {
+    width: 200px;
+    position: absolute;
+    right: 200px;
+    top: 50px;
+    border: 1px solid #2E394D;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (max-width:1200px) {
+    #side-bar {
+        right: 100px;
+    }
+}
+
+.exchange,
+.chart-wrapper {
+    background: #2E394D;
+    padding: 50px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.exchange {
+    margin-top: 50px;
+    width: 40%;
+
+}
+
+@media (max-width:1024px) {
+    .exchange {
+        width: 60vw;
+    }
+
+    #top-block {
+        margin-bottom: -100px;
+    }
+}
+
+@media (max-width:900px) {
+    #side-bar {
+        top: 250px;
+        right: 50px;
+    }
+
+    #currencies-list {
+        height: 740px;
+    }
+
+}
+
+.chart-wrapper {
+    width: 60vw;
+    padding-right: 100px;
+    margin-bottom: 100px;
+}
+
+#chart-container {
+    width: 60vw;
+    background: #2E394D;
+    border-radius: 20px;
+    overflow: hidden;
+    padding-right: 10vw;
+    margin-left: -50px;
+    overflow: auto;
+}
+
+
+@media (max-width:800px) {
+    #side-bar {
+        display: none;
+    }
+
+    body {
+        padding-right: 40px;
+    }
+
+    .exchange {
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    .chart-wrapper {
+        width: 100%;
+        margin-left: 20px;
+        margin-bottom: 100px;
+    }
+
+    #chart-container {
+        width: 99vw;
+    }
+
+}
+
+@media(max-width:425px) {
+
+    body {
+        padding-right: 20px;
+    }
+
+    .exchange {
+        display: flex;
+        padding: 20px;
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .chart-wrapper {
+        display: flex;
+        padding: 20px;
+        width: 100%;
+        margin-left: 10px;
+        margin-bottom: 100px;
+    }
+
+    #chart-container {
+        padding-left: 20px;
+        padding-right: 0px;
+    }
+
+    #top-title {
+        position: relative;
+        left: 50px;
+        top: 200px;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media(max-width:320px) {
+    .exchange {
+        padding: 20px;
+    }
+    .exchange .col {
+        padding: 5px;
+    }
+    .exchange input {
+        width: 70px;
+    }
+    .exchange .col {
+        width: 100%;
+    }
+}
+
+.periods-list {
+    list-style: none;
+}
+
+.periods-list li {
+    display: inline-block;
+    margin-right: 5px;
+    border: 1px solid #3C3E43;
+    padding: 3px
+    cursor: pointer;
+}
+
+.select-period-item {
+
+}
+
+#currency-to-value {
+    color: #005DC0;
+}

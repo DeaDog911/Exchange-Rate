@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #212738;
+    color: white;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    /*margin-top: 50px;
+    margin-left: 50px; */
+    margin-top: 50px;
+    margin-left: 50px;
+
+}
+
+#top-block {
+    width: 100%;
+}
+
+#top-title {
+    display: block;
+    margin-left: 50px;
+    margin-top: 60px;
+
+}
+
+@media (max-width: 510px) {
+    #top-title {
+        font-size: 23px;
+        margin-left: 30px;
+    }
+    #logo {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
+#exchange {
+    margin-left: 50px;
+    width: 30%;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#currency-from-value {
+    width: 100px;
+}

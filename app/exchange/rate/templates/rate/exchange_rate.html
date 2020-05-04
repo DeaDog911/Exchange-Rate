@@ -1,0 +1,96 @@
+{% extends 'rate/base_rate.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <div class="wrapper">
+        <!-- Header -->
+        <div id="top-block">
+            <img src="{% static 'images/logo.jpg' %}" alt="" id="logo">
+            <h1 id="top-title">{% trans 'Exchange rate' %}</h1>
+        </div>
+
+        <!-- Burger -->
+        <div class="fixed-block">
+            <div class="header-burger">
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="list">
+            <div id="side-bar">
+                <div class="currencies-list-item" >
+                    <select name=""id="sidebar-currency-select">
+                        {% include 'rate/includes/currencies.html' %}
+                    </select>
+                </div>
+                <div id="currencies-list"></div>
+            </div>
+        </div>
+
+
+        <!-- Convert -->
+        <div class="exchange">
+            <div class="row">
+                <div class="col">
+                    <select name="" id="currency-from-select">
+                        {% include 'rate/includes/currencies.html' %}
+                    </select>
+                    <br>
+                    <input id="currency-from-value" type="text" placeholder="Value">
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" id="convert">{% trans 'Convert' %}</button>
+                </div>
+                <div class="col">
+                    <select name="" id="currency-to-select">
+                        {% include 'rate/includes/currencies.html' %}
+                    </select>
+                    <br>
+                    <div class="mt-3">
+                        <span id="currency-to-value"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Chart -->
+        <div class="chart-wrapper">
+            <div class="center">
+                <h1 class="mb-5">{% trans 'Currency chart' %}</h1>
+                <div class="row">
+                    <div class="col">
+                        <select id="base-chart-currency">
+                            {% include 'rate/includes/currencies.html' %}
+                        </select>
+                    </div>
+                    <div class="col">
+                        <p>{% trans 'TO' %}</p>
+                    </div>
+                    <div class="col">
+                        <select id="currency-chart">
+                            {% include 'rate/includes/currencies.html' %}
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-success" id="update-chart">{% trans 'Update chart' %}</button>
+                <ul class="periods-list">
+                    <li class="select-period-item" id="week-period">{% trans 'week' %}</li>
+                    <li class="select-period-item" id="month-period">{% trans 'month' %}</li>
+                    <li class="select-period-item" id="quarter-period">{% trans 'quarter' %}</li>
+                    <li class="select-period-item" id="year-period">{% trans 'year' %}</li>
+                </ul>
+                <div id="chart-container" >
+                    <div class="spinner-border text-secondary" role="status" id="loading" style="display: none">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <canvas id="currencies-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+    <script src="{% static 'scripts/exchange_rate.js' %}"></script>
+
+{% endblock %}
