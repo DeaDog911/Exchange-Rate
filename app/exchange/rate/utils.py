@@ -4,11 +4,6 @@ import random
 from operator import itemgetter
 
 
-def get_rate(base, currency):
-    rates = make_request(f'https://api.exchangeratesapi.io/latest?base={base}')
-    return rates['rates'][currency]
-
-
 def make_request(url):
     response = requests.get(url)
     return response.json()
@@ -39,6 +34,11 @@ def add_coefficients(rates, base):
 def get_rates(base):
     rates = make_request(f"https://api.exchangeratesapi.io/latest?base={base}")
     return add_coefficients(rates['rates'], base)
+
+
+def get_rate(base, currency):
+    rates = make_request(f'https://api.exchangeratesapi.io/latest?base={base}')
+    return rates['rates'][currency]
 
 
 def sort_rates(rates):

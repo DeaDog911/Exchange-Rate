@@ -3,6 +3,8 @@
 {% load i18n %}
 
 {% block content %}
+
+
     <div class="wrapper">
         <!-- Header -->
         <div id="top-block">
@@ -11,7 +13,8 @@
         </div>
 
         <!-- Burger -->
-        <div class="fixed-block">
+        <div class="burger-wrapper">
+            <p class="burger-title">{% trans 'Rates' %}</p>
             <div class="header-burger">
                 <span></span>
             </div>
@@ -81,7 +84,7 @@
                     <li class="select-period-item" id="year-period">{% trans 'year' %}</li>
                 </ul>
                 <div id="chart-container" >
-                    <div class="spinner-border text-secondary" role="status" id="loading" style="display: none">
+                    <div class="spinner-border text-secondary ml-5 mt-2" role="status" id="loading" style="display: none">
                         <span class="sr-only">Loading...</span>
                     </div>
                     <canvas id="currencies-chart"></canvas>

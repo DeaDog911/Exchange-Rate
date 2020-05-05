@@ -5,7 +5,6 @@ $(document).ready(function() {
     const QUARTER_DAYS = 90;
     const YEAR_DAYS = 365;
 
-
     // необходимо для ajax post запросов
     var csrftoken = $.cookie('csrftoken');
 
@@ -24,11 +23,21 @@ $(document).ready(function() {
 
     /**************** Burger *****************/
 
+    function burgerClick() {
+        console.log('ban');
+    }
+
+    $('.header-burger').click((e) => {
+        $('.header-burger,#side-bar,.burger-wrapper,#currencies-list').toggleClass('active');
+        $('body').toggleClass('block');
+    });
 
     /******************* Cookie *********************/
 
     selectValuesFromCookies();
-    showCourseForPeriod(getCookie('base-chart-currency'), getCookie('currency-chart'), MONTH_DAYS);
+    showCourseForPeriod(getCookie('base-chart-currency'),
+                                   getCookie('currency-chart'),
+                                   MONTH_DAYS);
     $('select').on('change', saveInCookie);
 
 
@@ -65,7 +74,7 @@ $(document).ready(function() {
                     var rates = data;
                     createCurrenciesList(rates);
                 } else {
-                    document.getElementById('side-bar').style.display = 'none';
+//                    document.getElementById('side-bar').style.display = 'none';
                 }
             },
 

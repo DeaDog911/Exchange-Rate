@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-02 19:03+0000\n"
+"POT-Creation-Date: 2020-05-05 18:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,34 +20,42 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: rate/templates/rate/exchange_rate.html:25
+#: rate/templates/rate/exchange_rate.html:12
 msgid "Exchange rate"
 msgstr "Курс валют"
 
-#: rate/templates/rate/exchange_rate.html:39
+#: rate/templates/rate/exchange_rate.html:17
+msgid "Rates"
+msgstr "Курсы"
+
+#: rate/templates/rate/exchange_rate.html:47
 msgid "Convert"
 msgstr "Перевести"
 
-#: rate/templates/rate/exchange_rate.html:60
+#: rate/templates/rate/exchange_rate.html:63
+msgid "Currency chart"
+msgstr "График валюты"
+
+#: rate/templates/rate/exchange_rate.html:71
 msgid "TO"
 msgstr "К"
 
-#: rate/templates/rate/exchange_rate.html:70
+#: rate/templates/rate/exchange_rate.html:79
 msgid "Update chart"
 msgstr "Обновить график"
 
-#: rate/templates/rate/exchange_rate.html:72
+#: rate/templates/rate/exchange_rate.html:81
 msgid "week"
 msgstr "неделя"
 
-#: rate/templates/rate/exchange_rate.html:73
+#: rate/templates/rate/exchange_rate.html:82
 msgid "month"
 msgstr "месяц"
 
-#: rate/templates/rate/exchange_rate.html:74
+#: rate/templates/rate/exchange_rate.html:83
 msgid "quarter"
 msgstr "квартал"
 
-#: rate/templates/rate/exchange_rate.html:75
+#: rate/templates/rate/exchange_rate.html:84
 msgid "year"
 msgstr "год"

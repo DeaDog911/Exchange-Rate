@@ -10,10 +10,6 @@ def exchange_rate(request):
     return render(request, 'rate/exchange_rate.html', context={})
 
 
-def convert_currency():
-    pass
-
-
 def convert(request):
     if request.is_ajax():
         data = request.POST
