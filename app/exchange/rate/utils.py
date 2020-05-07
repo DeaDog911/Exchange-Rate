@@ -10,7 +10,7 @@ def make_request(url):
 
 
 def get_old_rates(base):
-    period_start = datetime.timedelta(days=10)  # 5 and 6 days doesn't work. I don't think why
+    period_start = datetime.timedelta(days=3)  # 5 and 6 days doesn't work. I don't think why
     today = datetime.date.today()
     previous_day = today - period_start
     response = make_request(f'https://api.exchangeratesapi.io/history?'
@@ -42,7 +42,8 @@ def get_rate(base, currency):
 
 
 def sort_rates(rates):
-    return sorted(rates.items(), key=itemgetter(0))
+    rates = sorted(rates.items(), key=itemgetter(0))
+    return rates
 
 
 def get_course_for_period(base, currency, period_days):

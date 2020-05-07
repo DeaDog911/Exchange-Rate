@@ -32,6 +32,20 @@ $(document).ready(function() {
         $('body').toggleClass('block');
     });
 
+    function getCurrencyType() {
+        var currencyType = '';
+        for (var elem of document.getElementsByClassName('switch')) {
+            if (elem.classList.contains('active-switch')) {
+                if (elem.id == 'currency-switch') {
+                    currencyType = 'currency';
+                }else if (elem.id == 'cryptocurrency-switch') {
+                    currencyType = 'cryptocurrency';
+                }
+            }
+        }
+        return currencyType;
+    }
+
     /******************* Cookie *********************/
 
     selectValuesFromCookies();
@@ -66,9 +80,13 @@ $(document).ready(function() {
 
     function outputExchangeRate(baseCurrency) {
         $.ajax({
-            type: 'POST',
+            type: 'GET',
             url: 'get_exchange_rates',
-            data: {'currency_base': baseCurrency},
+            data: {
+                'currency_type': getCurrencyType(),
+                'currency_base': baseCurrency,
+            },
+
             success: (data) => {
                 if (data != 'Error') {
                     var rates = data;
@@ -122,8 +140,9 @@ $(document).ready(function() {
         spanCoefficient.textContent = coefficient;
         spanCoefficient.style.float = 'right';
 
+        var green = '#28B066';
         if (coefficient > 1) {
-            spanCoefficient.style.color = 'green';
+            spanCoefficient.style.color = green;
         }else if (coefficient == 1) {
             spanCoefficient.style.color = 'grey';
         }else {
@@ -152,9 +171,10 @@ $(document).ready(function() {
         var currencyValue = document.getElementById('currency-from-value').value;
         var currencyToName = document.getElementById('currency-to-select').value;
         $.ajax({
-            type: 'POST',
+            type: 'GET',
             url: 'convert',
             data: {
+                'currency_type': getCurrencyType(),
                 'currencyFromName': currencyFromName,
                 'currencyValue': currencyValue,
                 'currencyToName': currencyToName,
@@ -195,7 +215,7 @@ $(document).ready(function() {
         item.style.backgroundColor = '#3C3E43';
         var base = document.getElementById('base-chart-currency').value;
         var currency = document.getElementById('currency-chart').value;
-        choosePeriod(item);
+        choosePeriod(base, currency, item);
     })
 
     function resetColorsOnItems() {
@@ -204,7 +224,7 @@ $(document).ready(function() {
         }
     }
 
-    function choosePeriod(item) {
+    function choosePeriod(base, currency, item) {
         switch(item.id) {
             case 'week-period':
                 showCourseForPeriod(base, currency, WEEK_DAYS);
@@ -242,9 +262,14 @@ $(document).ready(function() {
 
     function ajaxGetCourseForPeriod(base, currency, periodDays) {
         return $.ajax({
-            type: 'POST',
+            type: 'GET',
             url: 'get_course_for_period',
-            data: {'base': base, 'currency': currency, 'period_days': periodDays},
+            data: {
+                'currency_type': getCurrencyType(),
+                'base': base,
+                'currency': currency,
+                'period_days': periodDays
+             },
             success: (data) => {
                 rates = data;
             },

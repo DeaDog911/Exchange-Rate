@@ -4,13 +4,25 @@
 
 {% block content %}
 
-
+    <!-- {{ csrf_token }} -->
     <div class="wrapper">
         <!-- Header -->
         <div id="top-block">
             <img src="{% static 'images/logo.jpg' %}" alt="" id="logo">
             <h1 id="top-title">{% trans 'Exchange rate' %}</h1>
         </div>
+
+<!--        <div class="type-switch">-->
+<!--            <div id="currency-switch" class="{% if currency_type == 'currency' %} active-switch {% endif %} switch">-->
+<!--                <a href="?currency=currency">Currency</a>-->
+<!--            </div>-->
+<!--            <div class="separator">-->
+<!--                <span></span>-->
+<!--            </div>-->
+<!--            <div id="cryptocurrency-switch" class="{% if currency_type == 'cryptocurrency' %} active-switch {% endif %} switch">-->
+<!--                <a href="?currency=cryptocurrency">Cryptocurrency</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
         <!-- Burger -->
         <div class="burger-wrapper">
@@ -35,6 +47,7 @@
 
         <!-- Convert -->
         <div class="exchange">
+            <h1 class="mb-5">Currency convert</h1>
             <div class="row">
                 <div class="col">
                     <select name="" id="currency-from-select">

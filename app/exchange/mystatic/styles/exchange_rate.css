@@ -23,6 +23,57 @@ select {
     padding: 5px;
 }
 
+
+.type-switch {
+    margin: 50px 0 0 50px;
+    display: flex;
+    position: relative;
+    width: 220px;
+    justify-content: space-between;
+    background-color: #2E394D;
+    border-radius: 10px;
+}
+
+.separator span {
+    position: absolute;
+    left: 88px;
+    top: 0;
+    width: 7px;
+    background-color: grey;
+    height: 100%;
+    margin-left: -5px;
+
+}
+
+#currency-switch {
+    padding: 10px;
+    padding-right: 16px;
+}
+
+#cryptocurrency-switch {
+    padding: 10px;
+    margin-left: -7px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.switch {
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+a, a:active, a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+#currency-switch.active-switch,
+#cryptocurrency-switch.active-switch {
+    background: #28B066;
+}
+
 #top-block {
     position: relative;
     width: 100%;
@@ -92,6 +143,7 @@ select {
 }
 
 .exchange {
+    position: relative;
     margin-top: 50px;
     width: 40%;
 
@@ -265,6 +317,16 @@ select {
 
 @media(max-width:425px) {
 
+    h1 {
+        font-size: 20pt;
+    }
+
+    .exchange h1 {
+        position: absolute;
+        top: 10px;
+    }
+
+
     body {
         padding-right: 20px;
     }
@@ -272,6 +334,7 @@ select {
     .exchange {
         display: flex;
         padding: 20px;
+        padding-top: 50px;
         width: 100%;
         margin-left: 10px;
         margin-right: 10px;
@@ -302,6 +365,7 @@ select {
 @media(max-width:320px) {
     .exchange {
         padding: 20px;
+        padding-top: 50px;
     }
     .exchange .col {
         padding: 5px;
@@ -323,13 +387,13 @@ select {
     margin-right: 5px;
     border: 1px solid #3C3E43;
     padding: 3px
-    cursor: pointer;
+
 }
 
 .select-period-item {
-
+    cursor: pointer;
 }
 
 #currency-to-value {
-    color: #005DC0;
+    color: #28B066;
 }
